@@ -33,8 +33,112 @@ h1 {
 	margin-bottom: 30px;
 }
 
+.grid-container {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   grid-gap: 20px;
+   width: 80%;
+    margin-left:10%;
+    margin-right: 10%;
+}
+.card {
+  border: 1px solid #d3d3d3;
+  border-radius: .25rem;
+  cursor: pointer;
+}
 
+.bg-img {
+  background-size: cover;
+  min-height: 150px;
+  background-position: center;
+  background-color: #fff;
+}
+.back_img{
+  height: -webkit-fill-available;
+}
 
+.content {
+  padding: 15px;
+}
+.card__one {
+  transition: transform .5s;
+}
+.card__one::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+  content: '';
+  opacity: 0;
+  z-index: -1;
+}
+.card__one:hover, .card__one:focus {
+  transform: scale3d(1.006, 1.006, 1);
+/*  background:linear-gradient(35deg,#43cea2,#185a9d);*/
+}
+.card__one:hover::after, .card__one:focus::after{
+  opacity: 1;
+ background:linear-gradient(35deg,#43cea2,#185a9d);
+ text-decoration-color: black;
+}
+.for_card_text{
+   font-size: 14px; 
+   font-family: monospace;
+}
+
+.image:hover{
+transform: scale(1.2);
+cursor: pointer;
+}
+
+#lab_social_icon_footer {
+  background: linear-gradient(35deg,#43cea2,#185a9d);
+    border-color: #43cea2;
+}
+}
+
+#lab_social_icon_footer a {
+  color: #333;
+}
+
+#lab_social_icon_footer .social:hover {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+
+#lab_social_icon_footer .social {
+  -webkit-transform: scale(0.8);
+  /* Browser Variations: */
+  
+  -moz-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+}
+/*
+    Multicoloured Hover Variations
+*/
+
+#lab_social_icon_footer #social-fb:hover {
+  color: #427bc3;
+}
+
+#lab_social_icon_footer #social-tw:hover {
+  color: #1241f5f5;
+}
+
+#lab_social_icon_footer #social-gp:hover {
+  color: #f5840c;
+}
+
+#lab_social_icon_footer #social-em:hover {
+  color: #202021f5;
+}
 /* Paragraph & Typographic */
 p {
     line-height: 28px;
@@ -48,7 +152,7 @@ p {
 
 /* Links */
 a {
-    color: #1abc9c;
+    color: #4e4d4d;
     word-wrap: break-word;
 
     -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
